@@ -1,0 +1,19 @@
+Typescript quickstart:
+
+npm i typescript -g
+* installs TypeScript globally
+
+tsc
+* outputs all of the command-line flags and options
+
+tsc name_of_file.ts
+* compiles TypeScript file into JavaScript
+
+
+tsc --init
+* creates tsconfig.json file in current project
+
+tsconfig.json
+	module: controls the JavaScript version that is used
+
+
