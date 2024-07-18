@@ -11,9 +11,12 @@ tsc name_of_file.ts
 
 
 tsc --init
-* creates tsconfig.json file in current project
+* creates tsconfig.json file in the current project
 
 tsconfig.json
-	module: controls the JavaScript version that is used
+	module: controls the JavaScript version that TypeScript files are converted into
+
+npm install typescript -D 
+* saves typescript as a dev dependency in the current project
 
 
