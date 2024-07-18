@@ -31,3 +31,7 @@ command line options:
 
     --headed
     * use with Cypress in 'run' mode to open a browser and observe tests
+
+npm install cypress-real-events
+    * popular plugin for handling browser events such as hover
+    * need to add the plugin to e2e.ts as well

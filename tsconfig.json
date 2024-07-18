@@ -2,7 +2,18 @@
     "compilerOptions": {
       "target": "es5",
       "lib": ["es5", "dom"],
-      "types": ["cypress", "node"]
+      "types": [
+        "cypress", 
+        "node", 
+        "cypress-real-events",
+      ],
+      "resolveJsonModule": true,
+      "baseUrl": "./",
+      "paths": {
+        "@fixtures/*" : [
+          "cypress/fixtures/*"
+        ]
+      }
     },
     "include": ["**/*.ts"]
   }
