@@ -10,7 +10,7 @@ function addTodo(todoText: string) {
 }
 
 function removeTodo(todoText: string) {
-    let todoItem = cy.get("[data-testid='todo-item-label']").contains(todoText);
+    let todoItem = cy.getTodoLabel(todoText);
     //todoItem.trigger('mouseover');
     todoItem.realHover();
     let todoItemRemoveButton = 
@@ -22,8 +22,7 @@ function removeTodo(todoText: string) {
 it('add and remove a single todo item using todo item remove button', () => {
     cy.visit("https://todomvc.com/examples/react/dist/");
     addTodo("1234");
-
-    let todo1Label = cy.get("[data-testid='todo-item-label']").contains("1234");
+    let todo1Label = cy.getTodoLabel("1234");
     todo1Label.should("be.visible");
     removeTodo("1234");
 });
@@ -36,12 +35,11 @@ it('add multiple todo items in sequence', () => {
     });
 
     todos.list.forEach((list) => {
-        let todo1Label = cy.get("[data-testid='todo-item-label']").contains(list.name);
+        let todo1Label = cy.getTodoLabel(list.name);
         todo1Label.should("be.visible");
     })
 
     cy.get("[data-testid='todo-item-label']").then(($todoLabels) => {
-        console.log($todoLabels.length);
         for (let index=0; index < $todoLabels.length; index++) {
             assert.equal($todoLabels[index].innerHTML, todos.list[index].name);
             assert.equal(index, todos.list[index].order);
