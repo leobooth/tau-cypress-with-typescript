@@ -1,0 +1,25 @@
+Typescript quickstart:
+
+npm i typescript -g
+* installs TypeScript globally
+
+tsc
+* outputs all of the command-line flags and options
+
+tsc name_of_file.ts
+* compiles TypeScript file into JavaScript
+
+
+tsc --init
+* creates tsconfig.json file in the current project
+
+tsconfig.json
+	module: controls the JavaScript version that TypeScript files are converted into
+
+npm install typescript -D 
+* saves typescript as a dev dependency in the current project
+
+tsc --noEmit
+* runs the TypeScript compiler without creating JavaScript files
+* this is useful for finding all errors in a project
+
